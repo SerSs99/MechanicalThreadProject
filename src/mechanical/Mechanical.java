@@ -1,29 +1,30 @@
 package mechanical;
 
-public class Mechanical extends Thread{
+public abstract class Mechanical{
 	
-	private String Name;
+	private String name;
 	private String spacialization;
 	private String idWork;
 	
 	public Mechanical(String name, String specialization, String idWork) {
-		this.Name=name;
+		this.name=name;
 		this.spacialization=specialization;
 		this.idWork=idWork;
 	}
 
+	
+public abstract String getType();
+public String getName() {
+	return  this.name;
+}
 
 public String presentation() {
-		return "Hello, I'm " + this.Name + ", id: " + 
-				this.idWork + "and my specialization is " +
-				this.spacialization;
+		return "Hello, my name is  " + this.name + ", I am a " +
+				getType() + ", id: " + 
+				this.idWork + " and my specialization is " +
+				this.spacialization + ".";
 	}	
 
-@Override
 
-public void run() {
-	System.out.println(this.presentation());
-	System.out.println(this.Name + ": Sta lavorando.");
-	System.out.println(this.Name + ": Ha finito di lavorare.");
-}
+
 }
