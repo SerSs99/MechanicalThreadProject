@@ -1,4 +1,4 @@
-package mechanical;
+package model;
 
 public class MotorbikeMechanical extends Thread {
 	
